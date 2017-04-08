@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="KsheeraSagara.Views.BasePage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Default">
+            <StackLayout BackgroundColor="White">
+                
+                <Label Text=""  FontAttributes="Bold" Style="{StaticResource LblStyle}" FontSize="Large"/>
+                <Label Text="&#3221;&#3277;&#3255;&#3264;&#3248;&#3256;&#3262;&#3223;&#3248;" 
+                       HorizontalTextAlignment="Center" FontAttributes="Bold" Style="{StaticResource LblStyle}" 
+                       FontSize="Large"/>
+                <Label Text=""  FontAttributes="Bold" Style="{StaticResource LblStyle}" FontSize="Large"/>
+
+                <ListView VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="White" 
+                      ItemsSource="{Binding Path=LstPages}" RowHeight="50" SeparatorVisibility="None"
+                      SelectedItem="{Binding Path=SelectedItem,Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Label Text="{Binding}" Style="{StaticResource LblStyleDark}" Margin="30,0,0,0"
+                                           FontSize="Medium"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+                <!--<Label Text="Milk Purchase" Style="{StaticResource LblStyleDark}" Margin="30,0,0,0"
+                                           FontSize="Medium">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MilkPurchaseCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label Text="Truck Sheet" Style="{StaticResource LblStyleDark}" Margin="30,0,0,0"
+                                           FontSize="Medium">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TruckSheetCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label Text="Local Sale" Style="{StaticResource LblStyleDark}" Margin="30,0,0,0"
+                                           FontSize="Medium">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding LocalSaleCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label Text="Members" Style="{StaticResource LblStyleDark}" Margin="30,0,0,0"
+                                           FontSize="Medium">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MembersCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label Text="Settings" Style="{StaticResource LblStyleDark}" Margin="30,0,0,0"
+                                           FontSize="Medium">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SettingsCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>-->
+
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+</MasterDetailPage>

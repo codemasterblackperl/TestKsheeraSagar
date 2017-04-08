@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+                        x:Class="KsheeraSagara.App">
+  <prism:PrismApplication.Resources>
+    <ResourceDictionary>
+
+      <Color x:Key="LightGray">#D3D3D3</Color>
+      <Color x:Key="ButtonYellow">#FFDC9D00</Color>
+      <Color x:Key="KashmirGreen">#003300</Color>
+      <Color x:Key="DarkerKelly">#93A661</Color>
+      <Color x:Key="GroupColor">#FFD3D3D3</Color>
+
+      <Color x:Key="Jet">#131516</Color>
+      <Color x:Key="Stone">#707C80</Color>
+
+      <Style x:Key="BtnYellowStyle" TargetType="{x:Type Button}">
+        <Setter Property="BackgroundColor" Value="#FFDC9D00"/>
+        <Setter Property="BorderColor" Value="Gray"/>
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="VerticalOptions" Value="Fill"/>
+      </Style>
+
+      <Style x:Key="BtnWhiteStyle" TargetType="{x:Type Button}">
+        <Setter Property="BackgroundColor" Value="#003300"/>
+        <Setter Property="BorderColor" Value="Gray"/>
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="VerticalOptions" Value="Fill"/>
+      </Style>
+
+      <Style x:Key="LblStyleDark" TargetType="{x:Type Label}">
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="VerticalOptions" Value="Fill"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="Black"/>
+      </Style>
+
+      <Style x:Key="LblStyle" TargetType="{x:Type Label}">
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="VerticalOptions" Value="Fill"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="#003300"/>
+      </Style>
+
+      <Style x:Key="EntStyle" TargetType="{x:Type Entry}">
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="BackgroundColor" Value="#003300"/>
+      </Style>
+
+    </ResourceDictionary>
+  </prism:PrismApplication.Resources>
+
+</prism:PrismApplication>
