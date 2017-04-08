@@ -71,6 +71,8 @@ namespace KsheeraSagara.ViewModels
                 "Settings"
             });
 
+            SelectedItem = "Milk Purchase";
+
             _currentPage = 0;
 
         }

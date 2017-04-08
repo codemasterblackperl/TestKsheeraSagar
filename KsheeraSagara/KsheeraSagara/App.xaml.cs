@@ -12,7 +12,7 @@ namespace KsheeraSagara
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("BasePage/MainNavigationPage/MilkPurchasePage");
+            NavigationService.NavigateAsync("BasePage");//MainNavigationPage/MilkPurchasePage");
         }
 
         protected override void RegisterTypes()

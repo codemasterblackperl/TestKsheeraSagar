@@ -3,6 +3,184 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="KsheeraSagara.Views.MembersPage">
+             x:Class="KsheeraSagara.Views.MembersPage" Title="New Member Registration">
+
+    <ContentPage.Content>
+
+        <ScrollView>
+
+            <Grid Padding="5">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                
+
+                <StackLayout Orientation="Horizontal" Grid.Row="0">
+
+                    <Label Text="Type:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                    <Entry Text="{Binding Path=Type,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="1">
+
+                    <Label Text="Name:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                    <Entry Text="{Binding Path=Name,Mode=TwoWay}"
+                   FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="2">
+
+                    <Label Text="Card Number:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                    <Entry Text="{Binding Path=CardNumber,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="3">
+
+                    <Label Text="KMF UID:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                    <Entry Text="{Binding Path=KMFUID,Mode=TwoWay}"
+                   FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="4">
+
+                    <Label Text="Adhar No:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                    <Entry Text="{Binding Path=AdharNo,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="5">
+
+                    <Label Text="Phone Number:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                    <Entry Text="{Binding Path=PhoneNumber,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="6">
+
+                    <Label Text="Caste:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                    <Entry Text="{Binding Path=Caste,Mode=TwoWay}"
+                   FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="7">
+
+                    <Label Text="Occupation:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                    <Entry Text="{Binding Path=Occupation,Mode=TwoWay}"
+                   FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="8">
+
+                    <Label Text="Bank Name:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                    <Entry Text="{Binding Path=BankName,Mode=TwoWay}"
+                   FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="9">
+
+                    <Label Text="Branch Name:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                    <Entry Text="{Binding Path=BranchName,Mode=TwoWay}"
+                   FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="10">
+
+                    <Label Text="IFSC:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                    <Entry Text="{Binding Path=IFSC,Mode=TwoWay}"
+                   FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="11">
+
+                    <Label Text="Account Number:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                    <Entry Text="{Binding Path=AccountNumber,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <Button Text="Save" Grid.Row="12"
+                    FontSize="Large"
+                    Command="{Binding SaveCommand}"/>
+
+            </Grid>
+            
+            
+        </ScrollView>
+        
+    </ContentPage.Content>
   
 </ContentPage>

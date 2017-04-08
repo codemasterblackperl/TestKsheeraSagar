@@ -3,6 +3,111 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="KsheeraSagara.Views.LocalSalePage">
+             x:Class="KsheeraSagara.Views.LocalSalePage" Title="Local Sale">
+    <ContentPage.Content>
+
+        <Grid Padding="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="{Binding Path=ToDaysDate,StringFormat='{0:dd-MM-yyyy}'}"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+            <Label Text="{Binding Path=Session}"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="End">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SessionCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="1">
+
+                <Label Text="Card Number:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                <Entry Text="{Binding Path=CardNumber,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="2">
+
+                <Label Text="Name:" 
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                <Label Text="{Binding Path=MemberName}" 
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="3">
+
+                <Label Text="Party Code:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                <Entry Text="{Binding Path=PartyCode,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="4">
+
+                <Label Text="Price:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                <Entry Text="{Binding Path=Price,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="5">
+
+                <Label Text="Litre:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                <Entry Text="{Binding Path=Litre,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="6">
+
+                <Label Text="Amount:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                <Entry Text="{Binding Path=Amount,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+            </StackLayout>
+
+            <Button Text="Save" Grid.Row="7"
+                    FontSize="Large"
+                    Command="{Binding SaveCommand}"/>
+
+        </Grid>
+
+    </ContentPage.Content>
   
 </ContentPage>
