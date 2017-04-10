@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="KsheeraSagara.Views.RateChartPage" Title="Rate Chart">
+
+    <ContentPage.Content>
+        
+        <Grid Padding="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="0">
+
+                <Label Text="Fat:"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                <Entry Text="{Binding Path=Fat,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="1">
+
+                <Label Text="Rate:" 
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                <Entry Text="{Binding Path=Rate,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="2">
+
+                <Label Text="Rate per Fat(in paisa):"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="Start"/>
+
+                <Entry Text="{Binding Path=RatePerFat,Mode=TwoWay}"
+                   Keyboard="Numeric" FontSize="Large"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+            </StackLayout>
+
+            <Button Text="Generate Chart" Grid.Row="3"
+                    FontSize="Large"
+                    Command="{Binding GenerateRateChartCommand}"/>
+
+            <Grid Grid.Row="4" BackgroundColor="Black" Padding="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Fat" Grid.Row="0" Grid.Column="0"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}" BackgroundColor="White" FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+
+                <Label Text="Rate" Grid.Row="0" Grid.Column="1"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}" BackgroundColor="White" FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+
+                <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Path=FcRateChar}" 
+                          VerticalOptions="Fill" HorizontalOptions="Fill"                     
+                      RowHeight="60" BackgroundColor="White">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="1" BackgroundColor="Black">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding Path=Fat,StringFormat='{0:0.0}'}" Grid.Row="0" Grid.Column="0"
+                                        FontSize="Large" Style="{DynamicResource Key=LblStyle}" BackgroundColor="White"
+                                        HorizontalTextAlignment="Center"/>
+
+                                    <Label Text="{Binding Path=Rate,StringFormat='{0:0.00}'}" Grid.Row="0" Grid.Column="1"
+                                        FontSize="Large" Style="{DynamicResource Key=LblStyle}" BackgroundColor="White"
+                                        HorizontalTextAlignment="Center"/>
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Grid>
+
+        </Grid>
+        
+        
+    </ContentPage.Content>
+  
+</ContentPage>

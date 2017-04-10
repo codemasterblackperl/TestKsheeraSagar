@@ -1,4 +1,5 @@
-﻿using KsheeraSagara.Model;
+﻿using KsheeraSagara.Helpers;
+using KsheeraSagara.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,7 @@ namespace KsheeraSagara.Shared
         public static List<Member> _LstMembers;
 
         public static List<MilkPurchaseModel> _LstMilkPurchase;
+
+        public static List<RatechartModel> _LstRateChart;
     }
 }

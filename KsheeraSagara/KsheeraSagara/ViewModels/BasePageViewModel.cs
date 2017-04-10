@@ -67,6 +67,7 @@ namespace KsheeraSagara.ViewModels
                 "Milk Purchase",
                 "Truck Sheet",
                 "Local Sale",
+                "Rate Chart",
                 "Members",
                 "Settings"
             });
@@ -88,6 +89,8 @@ namespace KsheeraSagara.ViewModels
                 await _navigationService.NavigateAsync("MainNavigationPage/TruckSheetPage");
             else if (SelectedItem == "Local Sale")
                 await _navigationService.NavigateAsync("MainNavigationPage/LocalSalePage");
+            else if(SelectedItem== "Rate Chart")
+                await _navigationService.NavigateAsync("MainNavigationPage/RateChartPage");
             else if (SelectedItem == "Members")
                 await _navigationService.NavigateAsync("MainNavigationPage/MembersPage");
         }

@@ -23,6 +23,7 @@ namespace KsheeraSagara
             Container.RegisterTypeForNavigation<TruckSheetPage>();
             Container.RegisterTypeForNavigation<LocalSalePage>();
             Container.RegisterTypeForNavigation<MembersPage>();
+            Container.RegisterTypeForNavigation<RateChartPage>();
         }
     }
 }
