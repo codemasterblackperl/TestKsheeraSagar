@@ -12,5 +12,33 @@ namespace KsheeraSagara.ViewModels
         {
 
         }
+
+        private string[] _memberType = new[]
+        {
+            "Share_Holder",
+            "Non_Share_Holder",
+            "Other"
+        };
+
+        private string[] _caste = new[]
+        {
+            "GM",
+        "SC",
+        "ST",
+        "C1",
+        "2A",
+        "2B",
+        "3A",
+        "3B",
+        "Other"
+        };
+
+        private string[] _occupation = new[]
+        {
+            "Farmer",
+            "Farm Labour",
+            "Other"
+        };
+
     }
 }

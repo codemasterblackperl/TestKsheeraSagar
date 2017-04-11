@@ -9,7 +9,16 @@ namespace KsheeraSagara.Model
     public class Member
     {
         public int CardNumber { get; set; }
+        public string MemberType { get; set; }
         public string Name { get; set; }
-
+        public string KMFUid { get; set; }
+        public string AdharNo { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Caste { get; set; }
+        public string Occupation { get; set; }
+        public string BankName { get; set; }
+        public string BankBranchName { get; set; }
+        public string IFSC { get; set; }
+        public string AccountNumber { get; set; }
     }
 }
