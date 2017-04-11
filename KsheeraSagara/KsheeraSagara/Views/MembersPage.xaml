@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:behav="clr-namespace:KsheeraSagara.Validator"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="KsheeraSagara.Views.MembersPage" Title="New Member Registration">
 
@@ -84,7 +85,11 @@
 
                     <Entry Text="{Binding Path=AdharNo,Mode=TwoWay}"
                    Keyboard="Numeric" FontSize="Large"
-                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Entry.Behaviors>
+                            <behav:EntryLengthValidatorBehavior MaxLength="12"/>
+                        </Entry.Behaviors>
+                    </Entry>
 
                 </StackLayout>
 
@@ -167,7 +172,7 @@
                    HorizontalOptions="Start"/>
 
                     <Entry Text="{Binding Path=AccountNumber,Mode=TwoWay}"
-                   Keyboard="Numeric" FontSize="Large"
+                   FontSize="Large"
                    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
 
                 </StackLayout>

@@ -22,5 +22,23 @@ namespace KsheeraSagara.Data
             var memCon = _database.GetCollection<Member>("Members");
             return memCon.FindAll().ToList();
         }
+
+        public void AddMember(Member member)
+        {
+            var memCon = _database.GetCollection<Member>("Members");
+            if (memCon.Count() == 0)
+                memCon.Insert(member);
+
+            var res = memCon.Exists(x => x.AdharNo == member.AdharNo);
+            if (res)
+                throw new Exception("Member already exists");
+            memCon.Insert(member);
+        }
+
+        public void UpdateMember(Member member)
+        {
+            var memCon = _database.GetCollection<Member>("Members");
+            memCon.Update(member);
+        }
     }
 }
