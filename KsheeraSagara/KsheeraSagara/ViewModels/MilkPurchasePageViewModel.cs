@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace KsheeraSagara.ViewModels
 {
-    public class MilkPurchasePageViewModel : BindableBase
+    public class MilkPurchasePageViewModel : BindableBase,INavigatedAware
     {
         private INavigationService _navigationService;
         private IPageDialogService _pageDialogService;
@@ -23,7 +23,6 @@ namespace KsheeraSagara.ViewModels
 
 
             SharedValues._LstMembers = new List<Member>();
-            SharedValues._LstMembers.Add(new Member { CardNumber = 1, Name = "Ajit" });
 
             SharedValues._LstMilkPurchase = new List<MilkPurchaseModel>();
 
@@ -172,5 +171,17 @@ namespace KsheeraSagara.ViewModels
             }
         }
 
+        public void OnNavigatedFrom(NavigationParameters parameters)
+        {
+            
+        }
+
+        public void OnNavigatedTo(NavigationParameters parameters)
+        {
+            if (SharedValues._LstMembers.Count == 0)
+            {
+                SharedValues._LstMembers = App.MlkDb.GetMembers();
+            }
+        }
     }
 }

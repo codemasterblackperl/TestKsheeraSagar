@@ -8,6 +8,7 @@ namespace KsheeraSagara.Model
 {
     public class Member
     {
+        public int Id { get; set; }
         public int CardNumber { get; set; }
         public string MemberType { get; set; }
         public string Name { get; set; }

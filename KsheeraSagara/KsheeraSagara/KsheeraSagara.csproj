@@ -43,6 +43,7 @@
     <Compile Include="Model\MilkPurchaseModel.cs" />
     <Compile Include="Model\RatechartModel.cs" />
     <Compile Include="Model\SessionModel.cs" />
+    <Compile Include="Model\Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\SharedValues.cs" />
     <Compile Include="Validator\EntryLengthValidatorBehavior.cs" />

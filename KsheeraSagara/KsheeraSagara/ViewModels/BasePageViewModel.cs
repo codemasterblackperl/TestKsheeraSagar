@@ -92,7 +92,7 @@ namespace KsheeraSagara.ViewModels
             else if(SelectedItem== "Rate Chart")
                 await _navigationService.NavigateAsync("MainNavigationPage/RateChartPage");
             else if (SelectedItem == "Members")
-                await _navigationService.NavigateAsync("MainNavigationPage/MembersPage");
+                await _navigationService.NavigateAsync("MainNavigationPage/MembersDisplay");
         }
     }
 }

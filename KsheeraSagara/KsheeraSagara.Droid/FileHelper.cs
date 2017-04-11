@@ -22,6 +22,8 @@ namespace KsheeraSagara.Droid
         public string GetLocalFilePath(string fileName)
         {
             string path= Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "KsheeraSagara");
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
             return Path.Combine(path, fileName);
         }
     }

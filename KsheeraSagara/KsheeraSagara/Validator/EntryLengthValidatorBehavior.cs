@@ -27,6 +27,9 @@ namespace KsheeraSagara.Validator
         {
             var entry = (Entry)sender;
 
+            if (entry == null || entry.Text == null)
+                return;
+
             // if Entry text is longer then valid length
             if (entry.Text.Length > this.MaxLength)
             {

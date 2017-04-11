@@ -19,6 +19,10 @@ namespace KsheeraSagara.ViewModels
         {
             _nav = navigationService;
             _pds = pageDialogService;
+
+            MemberType = "Non Share Holder";
+            Caste = "GM";
+            Occupation = "Farmer";
         }
 
         private int _cardNumber;
@@ -59,8 +63,8 @@ namespace KsheeraSagara.ViewModels
         {
             var res = await _pds.DisplayActionSheetAsync("Member Type:", "Cancel","", new[]
             {
-                "Share_Holder",
-                "Non_Share_Holder",
+                "Share Holder",
+                "Non Share Holder",
                 "Other"
             });
             if (res.Equals("Cancel"))
@@ -100,9 +104,9 @@ namespace KsheeraSagara.ViewModels
             Occupation = res;
         }
 
-        private void BackCmdAsync()
+        private async void BackCmdAsync()
         {
-            
+            await _nav.NavigateAsync("MembersDisplay");
         }
 
         private async void SaveCmdAsync()
@@ -191,6 +195,22 @@ namespace KsheeraSagara.ViewModels
                     AccountNumber=AccountNo,
                 };
                 App.MlkDb.AddMember(member);
+                SharedValues._LstMembers.Add(member);
+
+                await _pds.DisplayAlertAsync("Info", "New user successfully registered", "Ok");
+
+                MemberType = "Non Share Holder";
+                CardNumber = 0;
+                AdharNo = 0;
+                Name = "";
+                KmfUid = "";
+                PhoneNumber = "";
+                Caste = "GM";
+                Occupation = "Farmer";
+                BankBranchName = "";
+                BankName = "";
+                Ifsc = "";
+                AccountNo = "";
             }
             catch(Exception ex)
             {

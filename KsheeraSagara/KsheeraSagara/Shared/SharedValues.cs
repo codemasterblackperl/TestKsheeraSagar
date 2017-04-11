@@ -15,5 +15,7 @@ namespace KsheeraSagara.Shared
         public static List<MilkPurchaseModel> _LstMilkPurchase;
 
         public static List<RatechartModel> _LstRateChart;
+
+        public static Settings _Settings;
     }
 }

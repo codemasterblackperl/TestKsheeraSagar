@@ -3,6 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="KsheeraSagara.Views.MembersDisplay">
+             x:Class="KsheeraSagara.Views.MembersDisplay" Title="Members">
+    
+    <ContentPage.Content>
+        
+        <Grid Padding="5">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+
+            <Button Text="Add New Member"
+                    FontSize="Large"
+                    Command="{Binding AddNewMemberCommand}"/>
+
+            <ListView Grid.Row="1" ItemsSource="{Binding Path=FcMembers}" 
+                          VerticalOptions="Fill" HorizontalOptions="Fill" CachingStrategy="RecycleElement"                    
+                      RowHeight="90" BackgroundColor="White">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="1" BackgroundColor="Gray">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="3.5*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="portrait.png" BackgroundColor="White"
+                                       Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"
+                                       />
+
+                                <Grid Grid.Column="1" BackgroundColor="White">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Card No: "
+                                        FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                                        HorizontalTextAlignment="Start"/>
+                                        <Label Text="{Binding Path=CardNumber}"
+                                        FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                                        HorizontalTextAlignment="Start"/>
+                                    </StackLayout>
+
+
+                                    <Label Text="{Binding Path=Name}" Grid.Row="1"
+                                        FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                                        HorizontalTextAlignment="Center"/>
+
+                                    <StackLayout Orientation="Horizontal" Grid.Row="2">
+                                        <Label Text="&#x260e; "
+                                        FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                                        HorizontalTextAlignment="Start"/>
+                                        <Label Text="{Binding Path=PhoneNumber}"
+                                        FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                                        HorizontalTextAlignment="Start"/>
+                                    </StackLayout>
+                                    
+                                </Grid>
+                                
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
+        
+    </ContentPage.Content>
   
 </ContentPage>

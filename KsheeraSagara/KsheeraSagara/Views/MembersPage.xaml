@@ -35,7 +35,7 @@
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="Start"/>
 
-                    <Label Text="{Binding Path=MemberType}"
+                    <Label Text="{Binding Path=MemberType,Mode=TwoWay}"
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="End">
                         <Label.GestureRecognizers>
@@ -115,7 +115,7 @@
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="Start"/>
 
-                    <Label Text="{Binding Path=Caste}"
+                    <Label Text="{Binding Path=Caste,Mode=TwoWay}"
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="End">
                         <Label.GestureRecognizers>
@@ -131,7 +131,7 @@
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="Start"/>
 
-                    <Label Text="{Binding Path=Occupation}"
+                    <Label Text="{Binding Path=Occupation,Mode=TwoWay}"
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="End">
                         <Label.GestureRecognizers>
@@ -189,15 +189,20 @@
 
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Grid.Row="12">
-                    <Button Text="Back"
+                <Grid Grid.Row="12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button Text="Back" Grid.Column="0"
                     FontSize="Large"
                     Command="{Binding BackCommand}"/>
                     
-                    <Button Text="Save"
+                    <Button Text="Save" Grid.Column="1"
                     FontSize="Large"
                     Command="{Binding SaveCommand}"/>
-                </StackLayout>
+                </Grid>
 
             </Grid>
             
