@@ -35,9 +35,13 @@
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="Start"/>
 
-                    <Entry Text="{Binding Path=Type,Mode=TwoWay}"
-                   Keyboard="Numeric" FontSize="Large"
-                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="{Binding Path=MemberType}"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding MemberTypeSelectCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
 
                 </StackLayout>
 
@@ -71,7 +75,7 @@
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="Start"/>
 
-                    <Entry Text="{Binding Path=KMFUID,Mode=TwoWay}"
+                    <Entry Text="{Binding Path=KmfUid,Mode=TwoWay}"
                    FontSize="Large"
                    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
 
@@ -111,9 +115,13 @@
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="Start"/>
 
-                    <Entry Text="{Binding Path=Caste,Mode=TwoWay}"
-                   FontSize="Large"
-                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="{Binding Path=Caste}"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CasteSelectCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
 
                 </StackLayout>
 
@@ -123,9 +131,13 @@
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="Start"/>
 
-                    <Entry Text="{Binding Path=Occupation,Mode=TwoWay}"
-                   FontSize="Large"
-                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="{Binding Path=Occupation}"
+                   FontSize="Large" Style="{DynamicResource Key=LblStyle}"
+                   HorizontalOptions="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OccupationSelectCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
 
                 </StackLayout>
 
@@ -147,7 +159,7 @@
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="Start"/>
 
-                    <Entry Text="{Binding Path=BranchName,Mode=TwoWay}"
+                    <Entry Text="{Binding Path=BankBranchName,Mode=TwoWay}"
                    FontSize="Large"
                    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
 
@@ -159,7 +171,7 @@
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="Start"/>
 
-                    <Entry Text="{Binding Path=IFSC,Mode=TwoWay}"
+                    <Entry Text="{Binding Path=Ifsc,Mode=TwoWay}"
                    FontSize="Large"
                    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
 
@@ -171,15 +183,21 @@
                    FontSize="Large" Style="{DynamicResource Key=LblStyle}"
                    HorizontalOptions="Start"/>
 
-                    <Entry Text="{Binding Path=AccountNumber,Mode=TwoWay}"
+                    <Entry Text="{Binding Path=AccountNo,Mode=TwoWay}"
                    FontSize="Large"
                    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
 
                 </StackLayout>
 
-                <Button Text="Save" Grid.Row="12"
+                <StackLayout Orientation="Horizontal" Grid.Row="12">
+                    <Button Text="Back"
+                    FontSize="Large"
+                    Command="{Binding BackCommand}"/>
+                    
+                    <Button Text="Save"
                     FontSize="Large"
                     Command="{Binding SaveCommand}"/>
+                </StackLayout>
 
             </Grid>
             

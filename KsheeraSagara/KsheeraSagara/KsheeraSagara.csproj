@@ -49,12 +49,16 @@
     <Compile Include="ViewModels\BasePageViewModel.cs" />
     <Compile Include="ViewModels\LocalSalePageViewModel.cs" />
     <Compile Include="ViewModels\MainNavigationPageViewModel.cs" />
+    <Compile Include="ViewModels\MembersDisplayViewModel.cs" />
     <Compile Include="ViewModels\MembersPageViewModel.cs" />
     <Compile Include="ViewModels\MilkPurchasePageViewModel.cs" />
     <Compile Include="ViewModels\RateChartPageViewModel.cs" />
     <Compile Include="ViewModels\TruckSheetPageViewModel.cs" />
     <Compile Include="Views\LocalSalePage.xaml.cs">
       <DependentUpon>LocalSalePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MembersDisplay.xaml.cs">
+      <DependentUpon>MembersDisplay.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MembersPage.xaml.cs">
       <DependentUpon>MembersPage.xaml</DependentUpon>
@@ -130,6 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MembersDisplay.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!--<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />-->

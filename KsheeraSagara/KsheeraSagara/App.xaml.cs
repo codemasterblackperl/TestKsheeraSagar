@@ -39,6 +39,7 @@ namespace KsheeraSagara
             Container.RegisterTypeForNavigation<LocalSalePage>();
             Container.RegisterTypeForNavigation<MembersPage>();
             Container.RegisterTypeForNavigation<RateChartPage>();
+            Container.RegisterTypeForNavigation<MembersDisplay>();
         }
 
 
