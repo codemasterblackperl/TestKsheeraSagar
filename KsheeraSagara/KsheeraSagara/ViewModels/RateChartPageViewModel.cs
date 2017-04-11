@@ -91,12 +91,11 @@ namespace KsheeraSagara.ViewModels
         {
             var list = new List<RatechartModel>();
             double paisa = ratePerPaisa / 100;
-            double a;
+            
             do
             {
                 list.Add(new RatechartModel { Fat =fat , Rate = rate });
-                if (fat>5.3)
-                    a = 5.4;
+                
                 fat += 0.1;
                 rate += paisa;
 
