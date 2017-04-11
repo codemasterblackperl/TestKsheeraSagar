@@ -8,6 +8,8 @@ namespace KsheeraSagara
     {
         public App(IPlatformInitializer initializer = null) : base(initializer) { }
 
+
+
         protected override void OnInitialized()
         {
             InitializeComponent();

@@ -36,7 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Data\MilkDb.cs" />
     <Compile Include="Helpers\FastCollection.cs" />
+    <Compile Include="Data\IFileHelper.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\MilkPurchaseModel.cs" />
     <Compile Include="Model\RatechartModel.cs" />
