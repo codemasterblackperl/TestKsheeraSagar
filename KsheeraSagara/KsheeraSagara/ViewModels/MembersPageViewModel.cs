@@ -29,7 +29,7 @@ namespace KsheeraSagara.ViewModels
         private string _memberType;
         private string _name;
         private string _kmfUid;
-        private long _adharNo;
+        private string _adharNo;
         private string _phoneNumber;
         private string _caste;
         private string _occupation;
@@ -42,7 +42,7 @@ namespace KsheeraSagara.ViewModels
         public string MemberType { get => _memberType; set => SetProperty(ref _memberType, value); }
         public string Name { get => _name; set => SetProperty(ref _name, value); }
         public string KmfUid { get => _kmfUid; set => SetProperty(ref _kmfUid, value); }
-        public long AdharNo { get => _adharNo; set => SetProperty(ref _adharNo, value); }
+        public string AdharNo { get => _adharNo; set => SetProperty(ref _adharNo, value); }
         public string PhoneNumber { get => _phoneNumber; set => SetProperty(ref _phoneNumber, value); }
         public string Caste { get => _caste; set =>SetProperty(ref _caste , value); }
         public string Occupation { get => _occupation; set =>SetProperty(ref _occupation , value); }
@@ -106,7 +106,7 @@ namespace KsheeraSagara.ViewModels
 
         private async void BackCmdAsync()
         {
-            await _nav.NavigateAsync("MembersDisplay");
+            await _nav.GoBackAsync();
         }
 
         private async void SaveCmdAsync()
@@ -165,13 +165,13 @@ namespace KsheeraSagara.ViewModels
                 return;
             }
 
-            if (AdharNo<1||AdharNo.ToString().Length<12)
+            if (AdharNo.ToString().Length<12)
             {
                 await _pds.DisplayAlertAsync("Info", "Invalid AdharNo", "Ok");
                 return;
             }
 
-            if (SharedValues._LstMembers.Exists(x => x.AdharNo == AdharNo))
+            if (SharedValues._LstMembers.Exists(x => x.AdharNo.Equals(AdharNo)))
             {
                 await _pds.DisplayAlertAsync("Info", "AdharNo already exists ", "Ok");
                 return;
@@ -194,14 +194,14 @@ namespace KsheeraSagara.ViewModels
                     IFSC=Ifsc,
                     AccountNumber=AccountNo,
                 };
-                App.MlkDb.AddMember(member);
+                //App.MlkDb.AddMember(member);
                 SharedValues._LstMembers.Add(member);
 
                 await _pds.DisplayAlertAsync("Info", "New user successfully registered", "Ok");
 
                 MemberType = "Non Share Holder";
                 CardNumber = 0;
-                AdharNo = 0;
+                AdharNo = "";
                 Name = "";
                 KmfUid = "";
                 PhoneNumber = "";

@@ -44,10 +44,10 @@ namespace KsheeraSagara.Data
             var memCon = _database.GetCollection<Member>("Members");
             if (memCon == null || memCon.Count() == 0)
                 return new List<Member>();
-            //var memlist = memCon.FindAll();
-            //int count = memCon.Count();
-            //var member = memlist.First();
-            //var list = memlist.ToList();
+            var memlist = memCon.FindAll();
+            int count = memCon.Count();
+            var member = memlist.First();
+            var list = memlist.ToList();
             return new List<Member>();
         }
 

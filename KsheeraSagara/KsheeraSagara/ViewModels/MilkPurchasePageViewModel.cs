@@ -23,7 +23,30 @@ namespace KsheeraSagara.ViewModels
 
 
             SharedValues._LstMembers = new List<Member>();
-
+            SharedValues._LstMembers.Add(new Member
+            {
+                CardNumber = 1,
+                Name = "Ajit",
+                PhoneNumber = "123456789"
+            });
+            SharedValues._LstMembers.Add(new Member
+            {
+                CardNumber = 2,
+                Name = "Santosh",
+                PhoneNumber = "123456789"
+            });
+            SharedValues._LstMembers.Add(new Member
+            {
+                CardNumber = 3,
+                Name = "Subbu",
+                PhoneNumber = "123456789"
+            });
+            SharedValues._LstMembers.Add(new Member
+            {
+                CardNumber = 4,
+                Name = "Ravi",
+                PhoneNumber = "123456789"
+            });
             SharedValues._LstMilkPurchase = new List<MilkPurchaseModel>();
 
             ToDaysDate = DateTime.Now;
@@ -178,10 +201,10 @@ namespace KsheeraSagara.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-            if (SharedValues._LstMembers.Count == 0)
-            {
-                SharedValues._LstMembers = App.MlkDb.GetMembers();
-            }
+            //if (SharedValues._LstMembers.Count == 0)
+            //{
+            //    SharedValues._LstMembers = App.MlkDb.GetMembers();
+            //}
         }
     }
 }
